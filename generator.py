@@ -62,7 +62,7 @@ class TheoremNode:
         return self.__str__()
 
 
-def generate_theorem_tree_optimized(
+def generate_theorem_tree(
     axiom: str, 
     rules: list[Callable[[str], Optional[str]]], 
     max_level: int = 10
@@ -145,10 +145,10 @@ def print_theorems_by_level(root: TheoremNode) -> None:
 
 
 if __name__ == "__main__":
-    print("=== Optimized Theorem Generation ===")
+    print("=== Theorem Generation ===")
     
     # Generate theorem tree
-    root = generate_theorem_tree_optimized(axiom=AXIOM, rules=RULES, max_level=4)
+    root = generate_theorem_tree(axiom=AXIOM, rules=RULES, max_level=4)
     
     # Collect all theorems for comparison
     all_theorems = collect_all_theorems(root)
